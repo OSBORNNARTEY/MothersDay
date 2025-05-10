@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Mother's Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff7eb9;
+            --secondary: #ff65a3;
+            --accent: #7afcff;
+            --light: #fff7f8;
+            --dark: #2a2a2a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            opacity: 0;
+            animation: float 6s ease-in-out infinite;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .hero h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Features */
+        .features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 5px solid var(--primary);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .slider-dot.active {
+            background-color: var(--primary);
+        }
+        
+        /* Photo Gallery */
+        .gallery {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Memory Wall */
+        .memory-wall {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .memory-form {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .memories-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .memory-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .memory-author {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .memory-date {
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .modal-img {
+            width: 100%;
+            display: block;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content container">
+            <h1>Happy Mother's Day</h1>
+            <p class="subtitle">Celebrating the incredible women who shape our lives with love and care</p>
+            <div class="floating-hearts" id="hearts-container"></div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container container">
+            <div class="logo">Mom's Day</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Why Moms Are Special</a></li>
+                <li><a href="#testimonials">Love Letters</a></li>
+                <li><a href="#gallery">Moments</a></li>
+                <li><a href="#memories">Memory Wall</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content container">
+            <h2>A Mother's Love Knows No Bounds</h2>
+            <p>This Mother's Day, let's celebrate the unconditional love, endless patience, and boundless strength that mothers bring to our lives every single day.</p>
+            <a href="#memories" class="btn">Share Your Memory</a>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Moms Are Special</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Unconditional Love</h3>
+                    <p>A mother's love is the fuel that enables a normal human being to do the impossible.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Endless Protection</h3>
+                    <p>Mothers are like human shields, always there to protect us from life's challenges.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍪</div>
+                    <h3>Comfort & Nourishment</h3>
+                    <p>From home-cooked meals to warm hugs, moms know exactly what we need.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Wisdom Keeper</h3>
+                    <p>Moms have an answer for everything, even when we don't want to hear it.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Superhuman Strength</h3>
+                    <p>Moms can do more by 9am than most people do all day.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌈</div>
+                    <h3>Magic Maker</h3>
+                    <p>They turn ordinary days into extraordinary memories with just their presence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Love Letters to Mom</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J.">
+                    <p class="testimonial-text">"My mom is my rock. Through all my ups and downs, she's been there with unwavering support and love. She taught me strength, kindness, and how to make the world's best chocolate chip cookies."</p>
+                    <p class="testimonial-author">- Sarah J.</p>
+                </div>
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael T.">
+                    <p class="testimonial-text">"I didn't appreciate my mom enough growing up. Now that I'm a parent myself, I realize the incredible sacrifices she made. Her patience and love knew no bounds."</p>
+                    <p class="testimonial-author">- Michael T.</p>
+                </div>
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya K.">
+                    <p class="testimonial-text">"My mother immigrated to give us a better life. She worked three jobs but never missed a school event. Her strength and determination inspire me every day."</p>
+                    <p class="testimonial-author">- Priya K.</p>
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-index="0"></div>
+                    <div class="slider-dot" data-index="1"></div>
+                    <div class="slider-dot" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Precious Moments</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://th.bing.com/th/id/OIP.0sEniWaFfC-JvNT6aPVsaQHaE7?cb=iwp2&rs=1&pid=ImgDetMain" alt="Mother and child">
+                    <div class="gallery-caption">A mother's embrace</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Family moment">
+                    <div class="gallery-caption">Family love</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80" alt="Mother teaching child">
+                    <div class="gallery-caption">Passing on wisdom</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://th.bing.com/th/id/OIP.noV8w97x3Nm0KH9inwGjOgHaE8?cb=iwp2&rs=1&pid=ImgDetMain" alt="Pregnant mother">
+                    <div class="gallery-caption">The beginning of motherhood</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Mother and daughter">
+                    <div class="gallery-caption">Generations of love</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Mother laughing">
+                    <div class="gallery-caption">Joyful moments</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- Memory Wall -->
+<section class="memory-wall" id="memories">
+    <div class="container">
+        <div class="section-title">
+            <h2>Memory Wall</h2>
+            <p>Share your favorite memory or message for your mom</p>
+        </div>
+        <div class="memory-form">
+            <form id="memoryForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="memory">Your Memory or Message</label>
+                    <textarea id="memory" required maxlength="500"></textarea>
+                    <small id="charCount">500 characters remaining</small>
+                </div>
+                <button type="submit" class="btn">Share Memory</button>
+            </form>
+        </div>
+        <div class="memories-container" id="memoriesContainer">
+            <!-- Memories will be loaded here from the backend -->
+        </div>
+    </div>
+</section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Happy Mother's Day</h3>
+                <p>To all the mothers, grandmothers, and mother figures - thank you for everything you do.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/233206782232?text=Hello%20Osborn!" target="_blank"><span>📱</span></a>
+                    <a href="https://portfolio-osbornnartey.vercel.app/"><span>💻</span></a>
+                    <a href="mailto:osbornnartey7@gmail.com"><span>📧</span></a>
+                    <a href="tel:0537182114"><span>📞</span></a>
+                </div>
+                <p class="copyright">© 2025 Optimus Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img src="" alt="" class="modal-img" id="modalImage">
+        </div>
+    </div>
+    
+    <script>
+        // Floating hearts animation
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartEmojis = ['❤️', '💖', '💗', '💓', '💞', '💕'];
+            
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+                heart.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(heart);
+            }
+        }
+        
+        // Mobile navigation toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Testimonial slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                showTestimonial(index);
+            });
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            let nextIndex = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextIndex);
+        }, 5000);
+        
+        // Gallery image modal
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.modal-close');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                modalImg.src = imgSrc;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+// Memory wall form
+const memoryForm = document.getElementById('memoryForm');
+const memoriesContainer = document.getElementById('memoriesContainer');
+const memoryText = document.getElementById('memory');
+const charCount = document.getElementById('charCount');
+
+// Character counter for memory text
+memoryText.addEventListener('input', () => {
+    const remaining = 500 - memoryText.value.length;
+    charCount.textContent = `${remaining} characters remaining`;
+});
+
+// API-based memory logic
+async function fetchMemoriesFromAPI() {
+    try {
+        const res = await fetch('/api/memories');
+        return await res.json();
+    } catch (err) {
+        console.error('Failed to fetch memories', err);
+        return [];
+    }
+}
+
+async function submitMemoryToAPI(name, message) {
+    try {
+        const res = await fetch('/api/memories', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, message })
+        });
+        return await res.json();
+    } catch (err) {
+        console.error('Failed to submit memory', err);
+        throw err;
+    }
+}
+
+async function displayMemories() {
+    try {
+        const memories = await fetchMemoriesFromAPI();
+        memoriesContainer.innerHTML = '';
+        
+        memories.forEach(memory => {
+            const memoryCard = document.createElement('div');
+            memoryCard.classList.add('memory-card');
+            memoryCard.innerHTML = `
+                <p class="memory-author">${memory.name}</p>
+                <p class="memory-date">${memory.date}</p>
+                <p>${memory.message}</p>
+            `;
+            memoriesContainer.appendChild(memoryCard);
+        });
+    } catch (err) {
+        console.error('Error displaying memories:', err);
+    }
+}
+
+// Handle form submission
+memoryForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById('memory').value.trim();
+    
+    if (!name || !message) {
+        alert('Please fill in both fields');
+        return;
+    }
+    
+    try {
+        await submitMemoryToAPI(name, message);
+        await displayMemories();
+        
+        // Reset form
+        memoryForm.reset();
+        charCount.textContent = '500 characters remaining';
+        
+        // Scroll to the new memory
+        window.scrollTo({
+            top: memoriesContainer.offsetTop - 20,
+            behavior: 'smooth'
+        });
+    } catch (err) {
+        alert('Failed to submit memory. Please try again.');
+        console.error('Submission error:', err);
+    }
+});
+
+// Initialize
+window.addEventListener('DOMContentLoaded', () => {
+    createHearts();
+    displayMemories();
+    
+    // Add scroll animation to elements
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.feature-card, .testimonial, .gallery-item, .memory-card');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementPosition < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    
+    // Set initial styles for animation
+    document.querySelectorAll('.feature-card, .testimonial, .gallery-item, .memory-card').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once on load
+});            
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "mothersday",
+  "version": "1.0.0",
+  "description": "mother's day celebration",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "mother's",
+    "day"
+  ],
+  "author": "Osborn Nartey",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.2"
+  }
+}
